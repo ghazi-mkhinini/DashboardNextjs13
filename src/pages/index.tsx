@@ -14,6 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [text, setText] = useState<string>("testing text");
+  const [percentage, setPercentage] = useState<number>(0);
   const [text2, setText2] = useState<string>(".");
 
   return (
@@ -30,7 +31,7 @@ export default function Home() {
       <ExtendedGuage1 text={undefined}></ExtendedGuage1>
       <ExtendedGuage1 text={undefined}></ExtendedGuage1>
 
-      <ExtendedGuage2 text={undefined}></ExtendedGuage2>
+      <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
 
       <Container text={text}></Container>
       <Container text={text}></Container>
@@ -39,6 +40,7 @@ export default function Home() {
         className="text-cyan-100"
         onClick={() => {
           setText("Setting new Text");
+          setPercentage(75);
         }}
       >
         Change Text
