@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import svg from "./_Group.svg";
 import { transform } from "typescript";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "./components/container";
 import Container2 from "./components/container2";
 
@@ -16,6 +16,16 @@ export default function Home() {
   const [text, setText] = useState<string>("testing text");
   const [percentage, setPercentage] = useState<number>(0);
   const [text2, setText2] = useState<string>(".");
+
+  useEffect(() => {
+    setInterval(() => {
+      if (percentage < 100)
+        setPercentage((percentage) => {
+          if (percentage < 100) return percentage + 1;
+          else return 0;
+        });
+    }, 50);
+  }, []);
 
   return (
     //<Image src={svg} alt={""} style={{width:"400px",height:"300px"}}></Image>
