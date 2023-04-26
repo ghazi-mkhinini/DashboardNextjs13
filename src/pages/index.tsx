@@ -23,7 +23,7 @@ export default function Home() {
         <Container text={text}></Container>
         <Container text={text2}></Container>
       </div>
-      <Container3 text={text2}></Container3>
+      <Container3 text={text2} width={190}></Container3>
       <Container2 text={undefined}></Container2>
       <Container2 text={undefined}></Container2>
 
