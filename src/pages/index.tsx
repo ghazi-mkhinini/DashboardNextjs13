@@ -8,6 +8,7 @@ import Container2 from "./components/container2";
 
 import ExtendedGuage1 from "./components/extendedGuage1";
 import ExtendedGuage2 from "./components/extendedGuage2";
+import Container3 from "./components/container3";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ export default function Home() {
         <Container text={text}></Container>
         <Container text={text2}></Container>
       </div>
-
+      <Container3 text={text2}></Container3>
       <Container2 text={undefined}></Container2>
       <Container2 text={undefined}></Container2>
 

@@ -5,8 +5,8 @@ export default function Container3({ text }): JSX.Element {
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 922 536"
-        width="922"
-        height="536"
+        width="180"
+        height="110"
       >
         <style>{`.a{fill:#3de0e0}.b{opacity:.4;fill:#3de0e0}`}</style>
         <path
