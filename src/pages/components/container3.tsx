@@ -6,8 +6,8 @@ export default function Container3({ width, text }): JSX.Element {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 922 536"
         //Aspect Ration 1:0.6
-        width={width} //width="180"
-        height={width*0.6} //height="110"
+        width={width} 
+        height={width*0.6}
       >
         <style>{`.a{fill:#3de0e0}.b{opacity:.4;fill:#3de0e0}`}</style>
         <path
