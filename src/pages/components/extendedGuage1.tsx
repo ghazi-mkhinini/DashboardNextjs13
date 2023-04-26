@@ -37,7 +37,10 @@ export default function ExtendedGuage1({ text }): JSX.Element {
           className="a"
           d="m72.4 159.8l-10.4-6 7.4-12.8 10.4 5.9zm14.9-25.7l-10.4-5.9 1-1.8 10.4 6zm8.4-14.6l-10.4-6 7.4-12.8 10.4 6z"
         />
-        <path className="a" d="m61 179.8l-7-12.1 7-12.2 10.4 6-3.6 6.2 3.6 6.1z" />
+        <path
+          className="a"
+          d="m61 179.8l-7-12.1 7-12.2 10.4 6-3.6 6.2 3.6 6.1z"
+        />
         <path
           className="a"
           d="m84.3 220.1l-7.4-12.8 10.3-6 7.5 12.8zm-14.9-25.7l-1-1.7 10.4-6 1 1.7z"
@@ -47,7 +50,10 @@ export default function ExtendedGuage1({ text }): JSX.Element {
           d="m115.9 275l-7.4-12.9 10.4-6 7.4 12.9zm-14.8-25.7l-1-1.8 10.4-5.9 1 1.7zm-8.4-14.6l-7.5-12.8 10.4-6 7.4 12.8z"
         />
         <path className="a" d="m138 288.9h-14l-7-12.2 10.3-6 3.6 6.2h7.1z" />
-        <path className="a" d="m184.5 288.9h-14.8v-12h14.8zm-29.7 0h-2v-12h2z" />
+        <path
+          className="a"
+          d="m184.5 288.9h-14.8v-12h14.8zm-29.7 0h-2v-12h2z"
+        />
         <path
           className="a"
           d="m247.9 288.9h-14.9v-12h14.9zm-29.7 0h-2v-12h2zm-16.9 0h-14.8v-12h14.8z"
