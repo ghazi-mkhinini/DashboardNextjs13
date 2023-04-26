@@ -5,7 +5,7 @@ export default function Container3({ width, text }): JSX.Element {
       style={{ minWidth: width, minHeight: width*0.6 }}
     >
       <p className="absolute p-1 top-2 left-2 z-[1] text-zinc-400 text-xs">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, numquam.
+        {text}
       </p>      
       <svg
         className="absolute top-0 left-0"
