@@ -16,13 +16,11 @@ export default function ExtendedGuage2({ percentage }): JSX.Element {
     for (let index = 1; index < barId; index++) {
       //const element = barList[index];
       let barSelector: string = `bar${index}`;
-      console.log("---------" + index);
       document.getElementById(barSelector).classList.add("red");
     }
     for (let index = barId; index < 23; index++) {
       //const element = barList[index];
       let barSelector: string = `bar${index}`;
-      console.log("---------" + index);
       document.getElementById(barSelector).classList.remove("red");
     }
   }
