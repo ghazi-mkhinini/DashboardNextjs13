@@ -55,7 +55,7 @@ body {
     
 }
 
-.temp {
+.temp,.circle10_dashed {
   transform-origin: 50% 50%;
   animation: rotation 8s infinite linear;
 }

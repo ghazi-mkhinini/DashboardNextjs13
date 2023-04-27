@@ -1,12 +1,20 @@
-export default function Container3({ width, text }): JSX.Element {
+interface typeString {
+  text: string;
+}
+
+interface typeNumber {
+  width: number;
+}
+
+export default function Container3({ width}: typeNumber, {text}: typeString ): JSX.Element {
   return (
     <div
       className="inline-block m-2 relative "
-      style={{ minWidth: width, minHeight: width*0.6 }}
+      style={{ minWidth: width, minHeight: width * 0.6 }}
     >
       <p className="absolute p-1 top-2 left-2 z-[1] text-zinc-400 text-xs">
         {text}
-      </p>      
+      </p>
       <svg
         className="absolute top-0 left-0"
         version="1.2"

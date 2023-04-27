@@ -1,4 +1,8 @@
-export default function ExtendedGuage1({ text }): JSX.Element {
+interface typeString {
+  text: string;
+}
+
+export default function ExtendedGuage1({ text }:typeString): JSX.Element {
   return (
     <div>
       <svg

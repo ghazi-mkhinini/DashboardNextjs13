@@ -1,6 +1,9 @@
 import { useEffect, useMemo } from "react";
 
-export default function ExtendedGuage2({ percentage }): JSX.Element {
+interface typeNumber {
+  percentage: number;
+}
+export default function ExtendedGuage2({ percentage }:typeNumber): JSX.Element {
   
   const barList: number[] = Array(23)
     .fill(1)

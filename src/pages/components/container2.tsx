@@ -1,4 +1,8 @@
-export default function Container2({ text }): JSX.Element {
+interface typeString {
+  text: string;
+}
+
+export default function Container2({ text }:typeString): JSX.Element {
   return (
     <div className="inline-block m-2">
       <svg

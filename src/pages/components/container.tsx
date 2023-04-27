@@ -1,8 +1,12 @@
-export default function Container({ text }): JSX.Element {
+interface  typeStrinhg{
+  text: string;
+}
+
+export default function Container({ text }: typeStrinhg): JSX.Element {
   return (
     <div
-      before={text}
-      className="inline-block w-[300px] h-[150px] before:content-[attr(before)] before:ml-[27px] before:mt-[20px] before:inline-block"
+      data-before={text}
+      className="inline-block w-[300px] h-[150px] before:content-[attr(data-before)] before:ml-[27px] before:mt-[20px] before:inline-block"
       style={{
         position: "relative",
         color: "white",
