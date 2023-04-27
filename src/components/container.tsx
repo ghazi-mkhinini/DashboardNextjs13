@@ -1,4 +1,4 @@
-interface  typeStrinhg{
+interface typeStrinhg {
   text: string;
 }
 
