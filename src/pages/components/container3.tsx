@@ -1,12 +1,9 @@
-interface typeString {
+interface typeParams {
   text: string;
-}
-
-interface typeNumber {
   width: number;
 }
 
-export default function Container3({ width}: typeNumber, {text}: typeString ): JSX.Element {
+export default function Container3({ width, text }: typeParams): JSX.Element {
   return (
     <div
       className="inline-block m-2 relative "

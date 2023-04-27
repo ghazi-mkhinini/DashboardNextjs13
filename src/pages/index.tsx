@@ -37,12 +37,13 @@ export default function Home() {
             <Container text={text}></Container>
             <Container text={text2}></Container>
           </div>
-          <Container3 text={"samle performance check"} width={220}></Container3>
-          <Container2 text={undefined}></Container2>
-          <Container2 text={undefined}></Container2>
+          <Container3
+            text={"sample performance check"} width={220}></Container3>
+          <Container2 text={""}></Container2>
+          <Container2 text={""}></Container2>
 
-          <ExtendedGuage1 text={undefined}></ExtendedGuage1>
-          <ExtendedGuage1 text={undefined}></ExtendedGuage1>
+          <ExtendedGuage1 text={""}></ExtendedGuage1>
+          <ExtendedGuage1 text={""}></ExtendedGuage1>
 
           <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
 
