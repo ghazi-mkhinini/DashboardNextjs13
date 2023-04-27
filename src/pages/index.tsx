@@ -26,7 +26,7 @@ export default function Home() {
           else return 0;
         });
     }, 20);
-  },[]);
+  }, []);
 
   return (
     //<Image src={svg} alt={""} style={{width:"400px",height:"300px"}}></Image>
@@ -38,7 +38,9 @@ export default function Home() {
             <Container text={text2}></Container>
           </div>
           <Container3
-            text={"sample performance check"} width={220}></Container3>
+            text={"sample performance check"}
+            width={220}
+          ></Container3>
           <Container2 text={""}></Container2>
           <Container2 text={""}></Container2>
 
