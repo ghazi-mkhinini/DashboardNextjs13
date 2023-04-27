@@ -43,3 +43,29 @@ body {
 .red{
   fill: #e0603d
 }
+.circle1,.circle2_dashed,.circle3,.circle4,.circle5_dashed,.circle6,.circle7_dashed,.circle8_dashed_p1,.circle8_dashed_p2,.circle9_dashed>.a{
+  fill: #e03daf !important;
+  visibility: hidden;
+}
+
+.circle9_dashed {
+   
+      transform: rotateZ(80deg)!important;
+      transform-origin: 50% 50%;
+    
+}
+
+.temp {
+  transform-origin: 50% 50%;
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
