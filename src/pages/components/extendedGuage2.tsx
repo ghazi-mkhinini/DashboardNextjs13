@@ -3,8 +3,9 @@ import { useEffect, useMemo } from "react";
 interface typeNumber {
   percentage: number;
 }
-export default function ExtendedGuage2({ percentage }:typeNumber): JSX.Element {
-  
+export default function ExtendedGuage2({
+  percentage,
+}: typeNumber): JSX.Element {
   const barList: number[] = Array(23)
     .fill(1)
     .map((value, index) => {
@@ -19,12 +20,12 @@ export default function ExtendedGuage2({ percentage }:typeNumber): JSX.Element {
     for (let index = 1; index < barId; index++) {
       //const element = barList[index];
       let barSelector: string = `bar${index}`;
-      document.getElementById(barSelector).classList.add("red");
+      document.getElementById(barSelector)?.classList.add("red");
     }
     for (let index = barId; index < 23; index++) {
       //const element = barList[index];
       let barSelector: string = `bar${index}`;
-      document.getElementById(barSelector).classList.remove("red");
+      document.getElementById(barSelector)?.classList.remove("red");
     }
   }
 
