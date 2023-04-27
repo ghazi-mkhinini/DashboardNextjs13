@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 
 export default function ExtendedGuage2({ percentage }): JSX.Element {
-
+  
   const barList: number[] = Array(23)
     .fill(1)
     .map((value, index) => {
