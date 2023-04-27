@@ -3,13 +3,13 @@ import { Inter } from "next/font/google";
 import svg from "./_Group.svg";
 import { transform } from "typescript";
 import { useEffect, useState } from "react";
-import Container from "./components/container";
-import Container2 from "./components/container2";
+import Container from "../components/container";
+import Container2 from "../components/container2";
 
-import ExtendedGuage1 from "./components/extendedGuage1";
-import ExtendedGuage2 from "./components/extendedGuage2";
-import Container3 from "./components/container3";
-import Central from "./components/Central";
+import ExtendedGuage1 from "../components/extendedGuage1";
+import ExtendedGuage2 from "../components/extendedGuage2";
+import Container3 from "../components/container3";
+import Central from "../components/Central";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +26,7 @@ export default function Home() {
           else return 0;
         });
     }, 20);
-  }, []);
+  },[]);
 
   return (
     //<Image src={svg} alt={""} style={{width:"400px",height:"300px"}}></Image>
