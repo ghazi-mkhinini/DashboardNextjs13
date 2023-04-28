@@ -10,6 +10,7 @@ import ExtendedGuage1 from "../components/extendedGuage1";
 import ExtendedGuage2 from "../components/extendedGuage2";
 import Container3 from "../components/container3";
 import Central from "../components/Central";
+import { animate, useAnimate } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function Home() {
   const [text, setText] = useState<string>("testing text");
   const [percentage, setPercentage] = useState<number>(0);
   const [text2, setText2] = useState<string>("");
+  const [scope, animate] = useAnimate();
 
   useEffect(() => {
     setInterval(() => {
@@ -54,9 +56,14 @@ export default function Home() {
 
           <button
             className="text-cyan-100"
+            ref={scope}
             onClick={() => {
               setText("Setting new Text");
-              setPercentage(75);
+              animate(
+                scope.current,
+                { opacity: 0.2, rotateZ: 80 },
+                { duration: 4 }
+              );
             }}
           >
             Change Text
