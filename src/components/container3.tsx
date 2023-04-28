@@ -33,7 +33,7 @@ export default function Container3({ width, text }: typeParams): JSX.Element {
               scope.current,
               {
                 opacity: 1,
-                rotateY: [0, 20, 20, 0],
+                rotateY: [0, -20, -20, 0],
                 rotateX: [0, 20, 20, 0],
                 x: 0,
               },
