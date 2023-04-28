@@ -33,6 +33,7 @@ html {
 body {
   color: black;
   background: black;
+  overflow: hidden;
 }
 
 .a {
@@ -61,6 +62,9 @@ body {
 }
 .temp2{
   transform-origin: 50% 50%;
+}
+.animate{
+  animation: rotation 2s ease-in-out;
 }
 
 @keyframes rotation {

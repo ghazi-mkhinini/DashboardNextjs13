@@ -1,9 +1,14 @@
+import { useAnimate } from "framer-motion";
+
 interface typeParams {
   text: string;
   width: number;
 }
 
 export default function Container3({ width, text }: typeParams): JSX.Element {
+
+  const [scope, animate] = useAnimate();
+  
   return (
     <div
       className="inline-block m-2 relative "
