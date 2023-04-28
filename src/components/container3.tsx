@@ -1,55 +1,126 @@
-import { useAnimate } from "framer-motion";
-import { useState } from "react";
+import { animate, stagger, useAnimate } from "framer-motion";
+import { ReactNode, useEffect, useState } from "react";
 
-interface typeParams {
-  text: string;
-  width: number;
+
+function useMenuAnimation(isOpen: boolean) {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    const menuAnimations = isOpen
+      ? [
+          [
+            "nav",
+            { transform: "translateX(0%)" },
+            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 },
+          ],
+          [
+            "li",
+            { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
+            { delay: stagger(0.05), at: "-0.1" },
+          ],
+        ]
+      : [
+          [
+            "li",
+            { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
+            { delay: stagger(0.05, { from: "last" }), at: "<" },
+          ],
+          ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }],
+        ];
+
+    animate([
+      [
+        "path.top",
+        { d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5" },
+        { at: "<" },
+      ],
+      ["path.middle", { opacity: isOpen ? 0 : 1 }, { at: "<" }],
+      [
+        "path.bottom",
+        { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
+        { at: "<" },
+      ],
+      ...menuAnimations,
+    ]);
+  }, [isOpen]);
+
+  return scope;
+}
+interface Props {
+  children?: ReactNode;
+  width:number;
+  text?:string;
 }
 
-export default function Container3({ width, text }: typeParams): JSX.Element {
+export default function Container3(
+  { width,text,children }:Props
+): JSX.Element {
   const [scope, animate] = useAnimate();
   const [isForwardMove, setIsForwardMove] = useState(true);
+
+  //----Custom Animation hook
+  const [isOpen, setIsOpen] = useState(false);
+  //const scope2 = useMenuAnimation(isOpen);
+
+  const handleClick = async () => {
+    if (isForwardMove === true) {
+      await animate(scope.current, {
+        opacity: [1, 1, 1],
+        rotateY: [0, 20, 20],
+        rotateX: [0, 20, 20],
+        x: [0, 200, 400],
+        //transition: { type: "spring", stiffness: 100, duration: 2 },
+      });
+      /*await animate(
+              scope.current,
+              {
+                opacity: 1,
+                rotateY: [0,20],
+                rotateX: [0,20],
+                x: [0,400],
+                transition: { type: "linear", stiffness: 100, duration: 2 },
+              },
+            );*/
+      /*animate(
+              scope.current,
+              {
+                x: 400,
+                transition: "ease",
+              },
+              { duration: 0.8 }
+            );*/
+      setIsForwardMove(false);
+    } else {
+      await animate(
+        scope.current,
+        {
+          opacity: 1,
+          rotateY: -20,
+          rotateX: 20,
+          x: 0,
+        },
+        { duration: 0.4 }
+      );
+      setIsForwardMove(true);
+    }
+  };
 
   return (
     <>
       <button
         className="text-cyan-100"
         ref={scope}
-        onClick={() => {
-          if (isForwardMove === true) {
-            animate(
-              scope.current,
-              {
-                opacity: 1,
-                rotateY: 20,
-                rotateX: 20,
-                x: 200,
-              },
-              { duration: 0.4 }
-            );
-            setIsForwardMove(false);
-          } else {
-            animate(
-              scope.current,
-              {
-                opacity: 1,
-                rotateY: -20,
-                rotateX: 20,
-                x: 0,
-              },
-              { duration: 0.4 }
-            );
-            setIsForwardMove(true);
-          }
-        }}
+        onClick={handleClick}
       >
         Change Text
       </button>
+
       <div
         className="inline-block m-2 relative "
         ref={scope}
         style={{ minWidth: width, minHeight: width * 0.6 }}
       >
+        <div className="m-5">{children}</div>
         <p className="absolute p-1 top-2 left-2 z-[1] text-zinc-400 text-xs">
           {text}
         </p>
