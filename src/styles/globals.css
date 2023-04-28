@@ -59,6 +59,9 @@ body {
   transform-origin: 50% 50%;
   animation: rotation 8s infinite linear;
 }
+.temp2{
+  transform-origin: 50% 50%;
+}
 
 @keyframes rotation {
   from {
