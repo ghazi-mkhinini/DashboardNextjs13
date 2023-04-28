@@ -21,11 +21,11 @@ export default function Container3({ width, text }: typeParams): JSX.Element {
               scope.current,
               {
                 opacity: 1,
-                rotateY: [0, 20, 20, 0],
-                rotateX: [0, 20, 20, 0],
+                rotateY: 20,
+                rotateX: 20,
                 x: 200,
               },
-              { duration: 1 }
+              { duration: 0.4 }
             );
             setIsForwardMove(false);
           } else {
@@ -33,11 +33,11 @@ export default function Container3({ width, text }: typeParams): JSX.Element {
               scope.current,
               {
                 opacity: 1,
-                rotateY: [0, -20, -20, 0],
-                rotateX: [0, 20, 20, 0],
+                rotateY: -20,
+                rotateX: 20,
                 x: 0,
               },
-              { duration: 1 }
+              { duration: 0.4 }
             );
             setIsForwardMove(true);
           }
