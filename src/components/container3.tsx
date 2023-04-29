@@ -26,14 +26,14 @@ export default function Container3({
             "GuageAnimation",
             [
               guageEx,
-              { x: 100 },
-              { ease: [0.08, 0.65, 0.53, 0.96], duration: 2, at: "-1.5" },
+              { x: 170 },
+              { ease: [0.08, 0.65, 0.53, 0.96], duration: 1.4, at: "-0.7" },
             ],
             [
               guageEx,
               { scale: 2, opacity: 1 },
               //{ delay: stagger(0.5), at: "-0.4" },
-              { delay: stagger(0.5), at: "GuageAnimation" },
+              { delay: stagger(0.1), at: "GuageAnimation" },
             ],
           ]
         : [
@@ -51,10 +51,10 @@ export default function Container3({
             {
               rotateX: 20,
               rotateY: 20,
-              x: 300,
+              x: 120,
               //transform: "translateX(20%)",
             },
-            { ease: [0.08, 0.65, 0.53, 0.96], duration: 2 },
+            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.7 },
           ],
           ...childrenAnimations,
         ]);
