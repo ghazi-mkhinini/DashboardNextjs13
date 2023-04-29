@@ -27,7 +27,7 @@ export default function Container3({
             [
               guageEx,
               { x: 100 },
-              { ease: [0.08, 0.65, 0.53, 0.96], duration: 2 },
+              { ease: [0.08, 0.65, 0.53, 0.96], duration: 2, at: "-1.5" },
             ],
             [
               guageEx,
@@ -48,7 +48,12 @@ export default function Container3({
         animate([
           [
             container,
-            { transform: "translateX(20%)" },
+            {
+              rotateX: 20,
+              rotateY: 20,
+              x:300
+              //transform: "translateX(20%)",
+            },
             { ease: [0.08, 0.65, 0.53, 0.96], duration: 2 },
           ],
           ...menuAnimations,
