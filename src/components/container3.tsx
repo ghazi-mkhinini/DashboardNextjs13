@@ -26,14 +26,18 @@ export default function Container3({
             "GuageAnimation",
             [
               guageEx,
-              { x: 170 },
-              { ease: [0.08, 0.65, 0.53, 0.96], duration: 1.4, at: "-0.7" },
+              { scale: 2, opacity: 1 },
+              //{ delay: stagger(0.5), at: "-0.4" },
+              { duration: 1.4, at: "GuageAnimation" },
             ],
             [
               guageEx,
-              { scale: 2, opacity: 1 },
-              //{ delay: stagger(0.5), at: "-0.4" },
-              { delay: stagger(0.1), at: "GuageAnimation" },
+              { x: 170 },
+              {
+                ease: [0.08, 0.65, 0.53, 0.96],
+                duration: 1.4,
+                at: "GuageAnimation",
+              },
             ],
           ]
         : [
@@ -73,7 +77,7 @@ export default function Container3({
   };
   const handleClick = async () => {
     if (isForwardMove === true) {
-      await animate(scope.current, {
+      await animate(scope2.current, {
         opacity: [1, 1, 1],
         rotateY: [0, 20, 20],
         rotateX: [0, 20, 20],
@@ -101,7 +105,7 @@ export default function Container3({
       setIsForwardMove(false);
     } else {
       await animate(
-        scope.current,
+        scope2.current,
         {
           opacity: 1,
           rotateY: -20,
