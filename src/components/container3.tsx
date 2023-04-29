@@ -114,11 +114,12 @@ export default function Container3({
       <button className="text-cyan-100" onClick={handleClick2}>
         Change Text
       </button>
-      <div id="container3" style={{ transform: "translateX(0%)" }}>
+      
         <div
+          id="container3"
           className="container3 inline-block m-2 relative "
           ref={scope2}
-          style={{ minWidth: width, minHeight: width * 0.6 }}
+          style={{ transform: "translateX(0%)", minWidth: width, minHeight: width * 0.6 }}
         >
           <div className="container3_children m-5">{children}</div>
           <p className="absolute p-1 top-2 left-2 z-[1] text-zinc-400 text-xs">
@@ -178,7 +179,6 @@ export default function Container3({
             />
           </svg>
         </div>
-      </div>
     </>
   );
 }
