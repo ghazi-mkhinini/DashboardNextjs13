@@ -1,9 +1,11 @@
 import { useEffect, useMemo } from "react";
 
 interface typeNumber {
+  id: string;
   percentage: number;
 }
 export default function ExtendedGuage2({
+  id,
   percentage,
 }: typeNumber): JSX.Element {
   const barList: number[] = Array(23)
@@ -35,6 +37,7 @@ export default function ExtendedGuage2({
 
   return (
     <svg
+      id={id}
       version="1.2"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 890 389"

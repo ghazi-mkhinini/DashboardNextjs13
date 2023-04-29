@@ -40,7 +40,7 @@ export default function Home() {
             <Container text={text2}></Container>
           </div>
           <Container3 text={""} width={220}>
-            <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
+            <ExtendedGuage2 id={"guageEx"} percentage={percentage}></ExtendedGuage2>
             <ExtendedGuage1 text={""}></ExtendedGuage1>
           </Container3>
           <Container2 text={""}></Container2>
