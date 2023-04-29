@@ -21,7 +21,7 @@ export default function Container3({
       console.log("--------isOpen= " + isOpen);
       const container: any = document.getElementById("container3");
       const guageEx: any = document.getElementById("guageEx");
-      const childrenAnimations = isOpen
+      const childrenAnimations: any = isOpen
         ? [
             "GuageAnimation",
             [
