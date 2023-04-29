@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 
 interface typeNumber {
-  id: string;
+  id?: string;
   percentage: number;
 }
 export default function ExtendedGuage2({

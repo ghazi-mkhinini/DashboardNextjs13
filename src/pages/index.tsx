@@ -35,16 +35,22 @@ export default function Home() {
     <>
       <div className="flex">
         <div>
+          
           <div className="flex">
             <Container text={text}></Container>
             <Container text={text2}></Container>
           </div>
+
+          <Container2 text={""}></Container2>
+          <Container2 text={""}></Container2>
+
           <Container3 text={""} width={220}>
-            <ExtendedGuage2 id={"guageEx"} percentage={percentage}></ExtendedGuage2>
+            <ExtendedGuage2
+              id={"guageEx"}
+              percentage={percentage}
+            ></ExtendedGuage2>
             <ExtendedGuage1 text={""}></ExtendedGuage1>
           </Container3>
-          <Container2 text={""}></Container2>
-          <Container2 text={""}></Container2>
 
           <ExtendedGuage1 text={""}></ExtendedGuage1>
           <ExtendedGuage1 text={""}></ExtendedGuage1>
