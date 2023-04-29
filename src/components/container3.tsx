@@ -23,21 +23,23 @@ export default function Container3({
       const guageEx: any = document.getElementById("guageEx");
       const menuAnimations = isOpen
         ? [
+            "startPoint",
             [
               guageEx,
-              { x:100 },
+              { x: 100 },
               { ease: [0.08, 0.65, 0.53, 0.96], duration: 2 },
             ],
             [
               guageEx,
-              { scale:2, opacity: 1},
-              { delay: stagger(0.05), at: "-0.1" },
+              { scale: 2, opacity: 1 },
+              //{ delay: stagger(0.5), at: "-0.4" },
+              { delay: stagger(0.5), at: "startPoint" },
             ],
           ]
         : [
             [
               guageEx,
-              { scale:1, opacity: 1 },
+              { scale: 1, opacity: 1 },
               { delay: stagger(0.05, { from: "last" }), at: "<" },
             ],
           ];
