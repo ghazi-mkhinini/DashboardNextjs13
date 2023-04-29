@@ -11,6 +11,7 @@ import ExtendedGuage2 from "../components/extendedGuage2";
 import Container3 from "../components/container3";
 import Central from "../components/Central";
 import { animate, useAnimate } from "framer-motion";
+import Factory3D from "@/model3D/Factory3D";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,11 +32,11 @@ export default function Home() {
   }, []);
 
   return (
-    //<Image src={svg} alt={""} style={{width:"400px",height:"300px"}}></Image>
+    
     <>
+      <Factory3D></Factory3D>
       <div className="flex">
         <div>
-          
           <div className="flex">
             <Container text={text}></Container>
             <Container text={text2}></Container>
