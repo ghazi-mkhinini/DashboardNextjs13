@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import { Suspense, useMemo } from "react";
-import { Canvas, applyProps } from "@react-three/fiber";
+import { Ref, Suspense, useMemo, useRef } from "react";
+import { Canvas, applyProps, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
 import { useEffect } from "react";
@@ -11,12 +11,29 @@ import { useLoader } from "@react-three/fiber";
 
 function FactoryModel(props: any) {
   //const { scene, nodes, materials } = useGLTF('/IndustrialTransparent4.gltf');
-  const gltf = useLoader(GLTFLoader, "/IndustrialTransparent4.gltf");
+  const gltfModel = useLoader(GLTFLoader, "/IndustrialTransparent4.gltf");
+  const modelRef: Ref<any> = useRef();
+
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    modelRef.current.rotation.y = t * 0.2;
+  });
+
+  useEffect(() => {
+    const { nodes } = gltfModel;
+    Object.values(nodes).forEach((element: any) => {
+      if (element.isMesh) {
+        // TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
+        // roughnessMipmapper.generateMipmaps( child.material );
+        element.material.color.setHex(0x3de0e0);
+      }
+    });
+  }, []);
 
   return (
     <>
-      <group>
-        <primitive object={gltf.scene} {...props} />
+      <group ref={modelRef}>
+        <primitive object={gltfModel.scene} {...props} />
       </group>
     </>
   );
