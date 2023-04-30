@@ -58,6 +58,8 @@ const Factory3D = () => {
       <Suspense>
         <FactoryModel></FactoryModel>
       </Suspense>
+      <directionalLight position={[1, 1, 1]}></directionalLight>
+      <ambientLight></ambientLight>
       <OrbitControls
         enablePan={false}
         enableZoom={false}
