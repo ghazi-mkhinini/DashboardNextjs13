@@ -69,7 +69,12 @@ export default function Container3({
               y: 200,
               //transform: "translateX(20%)",
             },
-            { duration: 1.4, ease: "linear", at: "last" },
+            //{ duration: 1.4, ease: "linear", at: "last" },
+            {
+              duration: 1.4,
+              ease: "linear",
+              delay: stagger(0, { from: "last" }),
+            },
           ],
           ...childrenAnimations,
         ]);
