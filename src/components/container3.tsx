@@ -13,14 +13,14 @@ export default function Container3({
   children,
 }: Props): JSX.Element {
   const [isForwardMove, setIsForwardMove] = useState(true);
-
   function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate();
 
     useEffect(() => {
-      console.log("--------isOpen= " + isOpen);
       const container: any = document.getElementById("container3");
       const guageEx: any = document.getElementById("guageEx");
+      console.log("--------isOpen= " + isOpen);
+
       const childrenAnimations: any = isOpen
         ? [
             "GuageAnimation",
@@ -28,14 +28,14 @@ export default function Container3({
               guageEx,
               { scale: 2, opacity: 1 },
               //{ delay: stagger(0.5), at: "-0.4" },
-              { duration: 1.4, at: "GuageAnimation" },
+              { duration: 1, at: "GuageAnimation" },
             ],
             [
               guageEx,
               { x: 170 },
               {
                 ease: [0.08, 0.65, 0.53, 0.96],
-                duration: 1.4,
+                duration: 1,
                 at: "GuageAnimation",
               },
             ],
@@ -47,6 +47,7 @@ export default function Container3({
               { delay: stagger(0.05, { from: "last" }), at: "<" },
             ],
           ];
+
       console.log("--------Running Animation= " + isOpen);
       if (isOpen)
         animate([
@@ -55,10 +56,20 @@ export default function Container3({
             {
               rotateX: 20,
               rotateY: 20,
-              x: 120,
+              x: 250,
+              y: 50,
               //transform: "translateX(20%)",
             },
-            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.7 },
+            { duration: 1.4, ease: "linear" },
+          ],
+          [
+            container,
+            {
+              x: 550,
+              y: 200,
+              //transform: "translateX(20%)",
+            },
+            { duration: 1.4, ease: "linear", at: "last" },
           ],
           ...childrenAnimations,
         ]);

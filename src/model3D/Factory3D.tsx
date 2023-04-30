@@ -25,6 +25,7 @@ function FactoryModel(props: any) {
       if (element.isMesh) {
         // TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
         // roughnessMipmapper.generateMipmaps( child.material );
+        //console.log(element);
         element.material.color.setHex(0x3de0e0);
       }
     });
