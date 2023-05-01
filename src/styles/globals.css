@@ -52,14 +52,31 @@ body {
 .circle9_dashed {
    
       transform: rotateZ(80deg)!important;
-      transform-origin: 50% 50%;
-    
+      transform-origin: 50% 50%;    
 }
 
-.temp,.circle10_dashed {
+.circle18_dashed,.circle10_dashed {
   transform-origin: 50% 50%;
-  animation: rotation 8s infinite linear;
+  /*animation: rotation 8s infinite linear;*/
 }
+
+.circle11_dashed{
+
+}
+
+.circle12_dashed{
+  
+}
+
+.circle13
+{
+  
+}
+
+.circle14_dashed {
+  visibility: hidden;
+}
+
 .temp2{
   transform-origin: 50% 50%;
 }

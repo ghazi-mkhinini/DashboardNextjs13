@@ -54,25 +54,25 @@ export default function Container3({
           [
             container,
             {
-              rotateX: 20,
-              rotateY: 20,
-              x: 250,
-              y: 50,
+              rotateX: [0, 20, 20, 20, 20, 20, 20],
+              rotateY: [0, 20, 20, 20, 20, 20, 20],
+              x: 300,
+              y: 180,
               //transform: "translateX(20%)",
             },
-            { duration: 1.4, ease: "linear" },
+            { duration: 1, ease: "easeIn" },
           ],
           [
             container,
             {
               x: 550,
-              y: 200,
+              y: 250,
               //transform: "translateX(20%)",
             },
             //{ duration: 1.4, ease: "linear", at: "last" },
             {
-              duration: 1.4,
-              ease: "linear",
+              duration: 1,
+              ease: "easeOut",
               delay: stagger(0, { from: "last" }),
             },
           ],
