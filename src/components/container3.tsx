@@ -12,7 +12,8 @@ export default function Container3({
   text,
   children,
 }: Props): JSX.Element {
-  const [isForwardMove, setIsForwardMove] = useState(true);
+  
+  //----Custom Animation hook
   function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate();
 
@@ -82,10 +83,12 @@ export default function Container3({
 
     return scope;
   }
-
-  //----Custom Animation hook
+  //----Component States
+  const [isForwardMove, setIsForwardMove] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const scope2 = useMenuAnimation(isOpen);
+
+  //----Event Handlers
   const handleClick2 = () => {
     setIsOpen(() => {
       return !isOpen;

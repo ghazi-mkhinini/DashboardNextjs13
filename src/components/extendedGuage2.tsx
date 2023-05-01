@@ -8,13 +8,7 @@ export default function ExtendedGuage2({
   id,
   percentage,
 }: typeNumber): JSX.Element {
-  const barList: number[] = Array(23)
-    .fill(1)
-    .map((value, index) => {
-      return index + 1;
-    });
-
-  //const result = useMemo(() => square(value), [value]);
+  let barList: any[];
 
   function setPercentage(percentage: number) {
     let barId: number = Math.round((percentage * 23) / 100);
@@ -23,6 +17,7 @@ export default function ExtendedGuage2({
       //const element = barList[index];
       let barSelector: string = `bar${index}`;
       document.getElementById(barSelector)?.classList.add("red");
+      //barList[index].classList.add("red");
     }
     for (let index = barId; index < 23; index++) {
       //const element = barList[index];
@@ -34,6 +29,18 @@ export default function ExtendedGuage2({
   useEffect(() => {
     setPercentage(percentage);
   }, [percentage]);
+
+  //----Mount
+  useEffect(() => {
+    barList = Array(23)
+      .fill("")
+      .map((value, index) => {
+        let barSelector: string = `bar${index + 1}`;
+        let barPathlement = document.getElementById(barSelector);
+        return barPathlement;
+      });
+    console.log("SVG path elements in barlist[]= " + barList);
+  }, []);
 
   return (
     <svg

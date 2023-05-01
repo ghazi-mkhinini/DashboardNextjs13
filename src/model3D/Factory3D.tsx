@@ -16,11 +16,12 @@ function FactoryModel(props: any) {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    modelRef.current.rotation.y = t * 0.2;
+    //modelRef.current.rotation.y = t * 0.2;
   });
 
   useEffect(() => {
     const { nodes } = gltfModel;
+    console.log(gltfModel.scene.children);
     Object.values(nodes).forEach((element: any) => {
       if (element.isMesh) {
         // TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
