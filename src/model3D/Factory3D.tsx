@@ -59,21 +59,26 @@ function FactoryModel(props: any) {
 
     let id = setInterval(() => {
       console.log("Effect material ");
-      console.log(Object.values(nodes)[9].material.color
-      );
-      if (
-        Object.values(nodes)[9].material.color.r =="0.04666508633021928"
-        /*{
+      console.log(Object.values(nodes)[9].material.color);
+      let obj=Object.values(nodes)[9];
+
+      if (isMaterialColorEqual(obj))
+        obj.material.color.setHex("0x9c1515");
+      else obj.material.color.setHex("0x3de0e0");
+    }, 1000);
+  }, []);
+
+  function isMaterialColorEqual(obj1) {
+    /*Color to compare to
+    {
           isColor: true,
           r: 0.04666508633021928,
           g: 0.7454042095350284,
           b: 0.7454042095350284,
         }*/
-      )
-        Object.values(nodes)[9].material.color.setHex("0x9c1515");
-      else Object.values(nodes)[9].material.color.setHex("0x3de0e0");
-    }, 1000);
-  }, []);
+
+    return( (obj1.material.color.r == "0.04666508633021928")&&(obj1.material.color.g=="0.7454042095350284"));
+  }
 
   return (
     <>
