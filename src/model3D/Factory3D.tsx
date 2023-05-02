@@ -10,40 +10,51 @@ import { useLoader } from "@react-three/fiber";
 import { useAnimate } from "framer-motion";
 
 function FactoryModel(props: any) {
+  console.log("------Begin component Factory3D");
   //------Component States
   //const { scene, nodes, materials } = useGLTF('/IndustrialTransparent4.gltf');
   const gltfModel = useLoader(GLTFLoader, "/IndustrialTransparent4.gltf");
   const modelRef: Ref<any> = useRef();
   const [material2, setMaterial2] = useState("0x3de0e0");
+  const { nodes } = gltfModel;
+  const Objects3D: any = Object.values(nodes);
 
   //--------Custom Hook for material animation
-  function useMaterialAnimation(isOpen: boolean) {
-    const [material, setMaterial] = useState();
+  function useMaterialAnimation(animate: boolean) {
+    const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
-      const object3D: any = gltfModel.scene.children[20];
-      console.log("--------isOpen= " + isOpen);
+      console.log(gltfModel.scene.children);
+      Objects3D.forEach((element: any) => {
+        if (element.isMesh) {
+          console.log("---element = " + element);
+          element.material.color.setHex(0x3de0e0);
+        }
+        //--setting Building material to Red
+        if (Objects3D[9].isMesh) {
+          //Object.values(nodes)[9].material.color.setHex(0x9c1515);
+          Objects3D[9].material.color.setHex(0x3de0e0);
+        }
+      });
+    }, []);
 
-      if (isOpen) object3D.material.color.setHex(0x9c1515);
-      else object3D.material.color.setHex(0x3de0e0);
-    }, [isOpen]);
-
-    return material;
+    return isAnimating;
   }
 
   //------Low level access to threejs rendering loop
-  useFrame((state) => {
+  /*useFrame((state) => {
     const t = state.clock.getElapsedTime();
     //modelRef.current.rotation.y = t * 0.2;
-  });
-  const { nodes } = gltfModel;
-  const Objects3D: any = Object.values(nodes);
+  });*/
+
+  console.log("------Finished State and const Factory3D");
   //------Mount
   useEffect(() => {
-    console.log(gltfModel.scene.children);
+    console.log("------Begin Mount Factory3D");
+    //console.log(gltfModel.scene.children);
     Objects3D.forEach((element: any) => {
       if (element.isMesh) {
-        console.log("---element = " + element);
+        //console.log("---element = " + element);
         element.material.color.setHex(0x3de0e0);
       }
       //--setting Building material to Red
@@ -52,25 +63,31 @@ function FactoryModel(props: any) {
         Objects3D[9].material.color.setHex(0x3de0e0);
       }
     });
+    console.log("------Finished Mount Factory3D");
   }, []);
 
-  let repeat :number = 0;
+  let repeat: number = 0;
   useEffect(() => {
+    console.log("------Begin Mount Factory3D effect modifying material");
     //--setting Building material to Red
     //setMaterial2("0x9c1515");
     let obj = Objects3D[9];
     let id = setInterval(() => {
-      console.log("Effect material ");
-      console.log(Objects3D[9].material.color);
-      
+      //console.log("Effect material ");
+      //console.log(Objects3D[9].material.color);
 
-      if (isMaterialColorEqual(obj)){ obj.material.color.setHex("0x9c1515");}
-      else {obj.material.color.setHex("0x3de0e0");repeat += 1;}
+      if (isMaterialColorEqual(obj)) {
+        obj.material.color.setHex("0x9c1515");
+      } else {
+        obj.material.color.setHex("0x3de0e0");
+        repeat += 1;
+      }
       if (repeat == 6) clearInterval(id);
     }, 250);
+    console.log("------Finished Mount Factory3D effect modifying material");
   }, []);
 
-  function isMaterialColorEqual(obj1:any) {
+  function isMaterialColorEqual(obj1: any) {
     /*Color to compare to
     {
           isColor: true,
@@ -86,13 +103,15 @@ function FactoryModel(props: any) {
     );
   }
 
-  return (
+  const jsx = (
     <>
       <group ref={modelRef}>
         <primitive object={gltfModel.scene} {...props} />
       </group>
     </>
   );
+  console.log("------Rerender JSX Factory3D");
+  return jsx;
 }
 
 const Factory3D = () => {
