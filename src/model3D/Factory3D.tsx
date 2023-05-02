@@ -37,18 +37,19 @@ function FactoryModel(props: any) {
     //modelRef.current.rotation.y = t * 0.2;
   });
   const { nodes } = gltfModel;
+  const Objects3D: any = Object.values(nodes);
   //------Mount
   useEffect(() => {
     console.log(gltfModel.scene.children);
-    Object.values(nodes).forEach((element: any) => {
+    Objects3D.forEach((element: any) => {
       if (element.isMesh) {
         console.log("---element = " + element);
         element.material.color.setHex(0x3de0e0);
       }
       //--setting Building material to Red
-      if (Object.values(nodes)[9].isMesh) {
+      if (Objects3D[9].isMesh) {
         //Object.values(nodes)[9].material.color.setHex(0x9c1515);
-        Object.values(nodes)[9].material.color.setHex(0x3de0e0);
+        Objects3D[9].material.color.setHex(0x3de0e0);
       }
     });
   }, []);
@@ -57,11 +58,11 @@ function FactoryModel(props: any) {
   useEffect(() => {
     //--setting Building material to Red
     //setMaterial2("0x9c1515");
-
+    let obj = Objects3D[9];
     let id = setInterval(() => {
       console.log("Effect material ");
-      console.log(Object.values(nodes)[9].material.color);
-      let obj = Object.values(nodes)[9];
+      console.log(Objects3D[9].material.color);
+      
 
       if (isMaterialColorEqual(obj)){ obj.material.color.setHex("0x9c1515");}
       else {obj.material.color.setHex("0x3de0e0");repeat += 1;}
@@ -69,7 +70,7 @@ function FactoryModel(props: any) {
     }, 250);
   }, []);
 
-  function isMaterialColorEqual(obj1) {
+  function isMaterialColorEqual(obj1:any) {
     /*Color to compare to
     {
           isColor: true,
