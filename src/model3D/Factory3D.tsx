@@ -53,6 +53,7 @@ function FactoryModel(props: any) {
     });
   }, []);
 
+  let repeat :number = 0;
   useEffect(() => {
     //--setting Building material to Red
     //setMaterial2("0x9c1515");
@@ -60,12 +61,12 @@ function FactoryModel(props: any) {
     let id = setInterval(() => {
       console.log("Effect material ");
       console.log(Object.values(nodes)[9].material.color);
-      let obj=Object.values(nodes)[9];
+      let obj = Object.values(nodes)[9];
 
-      if (isMaterialColorEqual(obj))
-        obj.material.color.setHex("0x9c1515");
-      else obj.material.color.setHex("0x3de0e0");
-    }, 1000);
+      if (isMaterialColorEqual(obj)){ obj.material.color.setHex("0x9c1515");}
+      else {obj.material.color.setHex("0x3de0e0");repeat += 1;}
+      if (repeat == 6) clearInterval(id);
+    }, 250);
   }, []);
 
   function isMaterialColorEqual(obj1) {
@@ -77,7 +78,11 @@ function FactoryModel(props: any) {
           b: 0.7454042095350284,
         }*/
 
-    return( (obj1.material.color.r == "0.04666508633021928")&&(obj1.material.color.g=="0.7454042095350284"));
+    return (
+      obj1.material.color.r == "0.04666508633021928" &&
+      obj1.material.color.g == "0.7454042095350284" &&
+      obj1.material.color.g == "0.7454042095350284"
+    );
   }
 
   return (
