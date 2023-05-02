@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Ref, Suspense, useMemo, useRef } from "react";
+import { Ref, Suspense, useMemo, useRef, useState } from "react";
 import { Canvas, applyProps, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
@@ -7,29 +7,72 @@ import { useEffect } from "react";
 import { motion } from "framer-motion-3d";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useLoader } from "@react-three/fiber";
-//import factoryModel from "../assets/glTF/IndustrialTransparent4.gltf";
+import { useAnimate } from "framer-motion";
 
 function FactoryModel(props: any) {
+  //------Component States
   //const { scene, nodes, materials } = useGLTF('/IndustrialTransparent4.gltf');
   const gltfModel = useLoader(GLTFLoader, "/IndustrialTransparent4.gltf");
   const modelRef: Ref<any> = useRef();
+  const [material2, setMaterial2] = useState("0x3de0e0");
 
+  //--------Custom Hook for material animation
+  function useMaterialAnimation(isOpen: boolean) {
+    const [material, setMaterial] = useState();
+
+    useEffect(() => {
+      const object3D: any = gltfModel.scene.children[20];
+      console.log("--------isOpen= " + isOpen);
+
+      if (isOpen) object3D.material.color.setHex(0x9c1515);
+      else object3D.material.color.setHex(0x3de0e0);
+    }, [isOpen]);
+
+    return material;
+  }
+
+  //------Low level access to threejs rendering loop
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     //modelRef.current.rotation.y = t * 0.2;
   });
-
+  const { nodes } = gltfModel;
+  //------Mount
   useEffect(() => {
-    const { nodes } = gltfModel;
     console.log(gltfModel.scene.children);
     Object.values(nodes).forEach((element: any) => {
       if (element.isMesh) {
-        // TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
-        // roughnessMipmapper.generateMipmaps( child.material );
-        //console.log(element);
+        console.log("---element = " + element);
         element.material.color.setHex(0x3de0e0);
       }
+      //--setting Building material to Red
+      if (Object.values(nodes)[9].isMesh) {
+        //Object.values(nodes)[9].material.color.setHex(0x9c1515);
+        Object.values(nodes)[9].material.color.setHex(0x3de0e0);
+      }
     });
+  }, []);
+
+  useEffect(() => {
+    //--setting Building material to Red
+    //setMaterial2("0x9c1515");
+
+    let id = setInterval(() => {
+      console.log("Effect material ");
+      console.log(Object.values(nodes)[9].material.color
+      );
+      if (
+        Object.values(nodes)[9].material.color.r =="0.04666508633021928"
+        /*{
+          isColor: true,
+          r: 0.04666508633021928,
+          g: 0.7454042095350284,
+          b: 0.7454042095350284,
+        }*/
+      )
+        Object.values(nodes)[9].material.color.setHex("0x9c1515");
+      else Object.values(nodes)[9].material.color.setHex("0x3de0e0");
+    }, 1000);
   }, []);
 
   return (
