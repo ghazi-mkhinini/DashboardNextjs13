@@ -42,10 +42,10 @@ function FactoryModel(props: any) {
   }
 
   //------Low level access to threejs rendering loop
-  /*useFrame((state) => {
+  useFrame((state) => {
     const t = state.clock.getElapsedTime();
     //modelRef.current.rotation.y = t * 0.2;
-  });*/
+  });
 
   console.log("------Finished State and const Factory3D");
   //------Mount
@@ -54,8 +54,9 @@ function FactoryModel(props: any) {
     //console.log(gltfModel.scene.children);
     Objects3D.forEach((element: any) => {
       if (element.isMesh) {
-        //console.log("---element = " + element);
-        element.material.color.setHex(0x3de0e0);
+        console.log("---element = " + element);
+        //element.material.color.setHex(0x3de0e0);
+        element.material.color.setHex(0xe5e7eb);
       }
       //--setting Building material to Red
       if (Objects3D[9].isMesh) {
