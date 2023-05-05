@@ -10,7 +10,7 @@ import { useLoader } from "@react-three/fiber";
 import { useAnimate } from "framer-motion";
 
 function FactoryModel(props: any) {
-  console.log("------Begin component Factory3D");
+  //console.log("------Begin component Factory3D");
   //------Component States
   //const { scene, nodes, materials } = useGLTF('/IndustrialTransparent4.gltf');
   const gltfModel = useLoader(GLTFLoader, "/IndustrialTransparent4.gltf");
@@ -47,10 +47,10 @@ function FactoryModel(props: any) {
     //modelRef.current.rotation.y = t * 0.2;
   });
 
-  console.log("------Finished State and const Factory3D");
+  //console.log("------Finished State and const Factory3D");
   //------Mount
   useEffect(() => {
-    console.log("------Begin Mount Factory3D");
+    //console.log("------Begin Mount Factory3D");
     //console.log(gltfModel.scene.children);
     Objects3D.forEach((element: any) => {
       if (element.isMesh) {
@@ -64,12 +64,12 @@ function FactoryModel(props: any) {
         Objects3D[9].material.color.setHex(0x3de0e0);
       }
     });
-    console.log("------Finished Mount Factory3D");
+    //console.log("------Finished Mount Factory3D");
   }, []);
 
   let repeat: number = 0;
   useEffect(() => {
-    console.log("------Begin Mount Factory3D effect modifying material");
+    //console.log("------Begin Mount Factory3D effect modifying material");
     //--setting Building material to Red
     //setMaterial2("0x9c1515");
     let obj = Objects3D[9];
@@ -85,7 +85,7 @@ function FactoryModel(props: any) {
       }
       if (repeat == 6) clearInterval(id);
     }, 250);
-    console.log("------Finished Mount Factory3D effect modifying material");
+    //console.log("------Finished Mount Factory3D effect modifying material");
   }, []);
 
   function isMaterialColorEqual(obj1: any) {
@@ -111,7 +111,7 @@ function FactoryModel(props: any) {
       </group>
     </>
   );
-  console.log("------Rerender JSX Factory3D");
+  //console.log("------Rerender JSX Factory3D");
   return jsx;
 }
 
