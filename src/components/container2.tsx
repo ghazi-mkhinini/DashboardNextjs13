@@ -2,12 +2,17 @@ import { ReactNode } from "react";
 
 interface propsType {
   text: string;
+  customClassName?: string;
   rest?:ReactNode[];
 }
 
-export default function Container2({ text, ...rest }: propsType): JSX.Element {
+export default function Container2({
+  text,
+  customClassName,
+  ...rest
+}: propsType): JSX.Element {
   return (
-    <div className={"inline-block m-2"} {...rest}>
+    <div className={"inline-block m-2" + " " + customClassName} {...rest}>
       <svg
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"

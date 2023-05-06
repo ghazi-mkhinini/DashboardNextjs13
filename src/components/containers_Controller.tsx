@@ -6,7 +6,7 @@ export function useContainerAnimation(isActive: boolean) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    const container: any = document.getElementById("");
+    const container: any = document.getElementById("container2_1");
     const guageEx: any = document.getElementById("");
 
     if (isActive)

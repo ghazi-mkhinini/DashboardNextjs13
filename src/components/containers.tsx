@@ -16,13 +16,18 @@ interface propsType {
 
 const Containers = (props: propsType): JSX.Element => {
   const { children, ...rest } = props;
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const scope = useContainerAnimation(isActive);
   //const table=
   const t = React.Children.toArray(children);
-  const arrr = t.map((Item: any) => {
+  const arrr = t.map((Item: any, index: number) => {
     //----Returning new Element with JSX
-    return <Container2 className={"absolute inline-block m-2"}></Container2>;
+    return (
+      <Container2
+        id={"container2_"+(index + 1)}
+        customClassName={"absolute"}
+      ></Container2>
+    );
     //----Returning new Element with React cloneElement  imperative code
     //return cloneElement(Item, { special : "absolute" }, null);
   });
