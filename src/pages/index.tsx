@@ -65,7 +65,7 @@ export default function Home() {
 
           <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
 
-          <Containers>
+          <Containers test={"kfkrf"} value={"jjjfjkf"}>
             <Container2 text={""}></Container2>
             <Container2 text={""}></Container2>
           </Containers>

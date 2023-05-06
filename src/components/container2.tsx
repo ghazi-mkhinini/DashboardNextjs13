@@ -1,10 +1,13 @@
-interface typeString {
+import { ReactNode } from "react";
+
+interface propsType {
   text: string;
+  rest?:ReactNode[];
 }
 
-export default function Container2({ text }:typeString): JSX.Element {
+export default function Container2({ text, ...rest }: propsType): JSX.Element {
   return (
-    <div className="inline-block m-2">
+    <div className={"inline-block m-2"} {...rest}>
       <svg
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
