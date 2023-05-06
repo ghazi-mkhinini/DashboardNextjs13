@@ -21,7 +21,9 @@ const Containers = (props: propsType): JSX.Element => {
   //const table=
   const t = React.Children.toArray(children);
   const arrr = t.map((Item: any) => {
+    //----Returning new Element with JSX
     return <Container2 className={"absolute inline-block m-2"}></Container2>;
+    //----Returning new Element with React cloneElement  imperative code
     //return cloneElement(Item, { special : "absolute" }, null);
   });
   return <>{arrr}</>;
