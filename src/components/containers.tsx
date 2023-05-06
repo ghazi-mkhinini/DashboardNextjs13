@@ -10,7 +10,7 @@ import React from "react";
 import Container2 from "./container2";
 
 interface propsType {
-  children?: ReactNode;
+  children?: ReactNode[];
   rest?: ReactNode[];
 }
 
