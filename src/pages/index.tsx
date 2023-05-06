@@ -12,6 +12,7 @@ import Container3 from "../components/container3";
 import Central from "../components/Central";
 import { animate, useAnimate } from "framer-motion";
 import Factory3D from "@/model3D/Factory3D";
+import Containers from "@/components/containers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +33,6 @@ export default function Home() {
   }, []);
 
   return (
-    
     <>
       <Factory3D></Factory3D>
       <div className="flex">
@@ -58,8 +58,12 @@ export default function Home() {
 
           <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
 
-          <Container text={text}></Container>
-          <Container text={text}></Container>
+          <Containers>
+            <Container2 text={""}></Container2>
+            <Container2 text={""}></Container2>
+          </Containers>
+          {/*<Container text={text}></Container>
+          <Container text={text}></Container>*/}
 
           <button
             className="text-cyan-100"
