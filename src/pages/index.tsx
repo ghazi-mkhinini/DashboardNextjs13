@@ -13,6 +13,13 @@ import Central from "../components/Central";
 import { animate, useAnimate } from "framer-motion";
 import Factory3D from "@/model3D/Factory3D";
 import Containers from "@/components/containers";
+import {
+  QueryClient,
+  QueryClientProvider
+} from "@tanstack/react-query";
+import QueryRoute1 from "@/API/QueryRoute1";
+
+const queryClient = new QueryClient();
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,6 +89,10 @@ export default function Home() {
         </div>
 
         <Central></Central>
+
+        <QueryClientProvider client={queryClient}>
+          <QueryRoute1 />
+        </QueryClientProvider>
       </div>
     </>
   );

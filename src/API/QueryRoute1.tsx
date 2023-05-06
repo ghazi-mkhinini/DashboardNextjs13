@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { JsxElement } from "typescript";
 
-export default function QueryRoute1() {
+export default function QueryRoute1(): JSX.Element {
   const { isLoading, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
@@ -9,9 +10,9 @@ export default function QueryRoute1() {
       ),
   });
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <>"Loading..."</>;
 
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return <>"An error has occurred: " + {error.message}</>;
 
   return (
     <div>

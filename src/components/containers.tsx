@@ -3,7 +3,7 @@ import { useContainerAnimation } from "./containers_Controller";
 import React from "react";
 
 interface Props {
-  children?: ReactElement;
+  children?: ReactNode;
 }
 
 interface Props2 {
