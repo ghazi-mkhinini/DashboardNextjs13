@@ -6,12 +6,12 @@ export default function Container({ text }: typeStrinhg): JSX.Element {
   return (
     <div
       data-before={text}
-      className="inline-block w-[300px] h-[150px] before:content-[attr(data-before)] before:ml-[27px] before:mt-[20px] before:inline-block"
+      className="inline-block w-[150px] h-[82px] before:content-[attr(data-before)] before:ml-[27px] before:mt-[20px] before:inline-block"
       style={{
         position: "relative",
         color: "white",
-        maxWidth: "280px",
-        maxHeight: "150px",
+        maxWidth: "150",
+        maxHeight: "82",
       }}
     >
       <svg
@@ -20,8 +20,8 @@ export default function Container({ text }: typeStrinhg): JSX.Element {
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1156 624"
-        width="280"
-        height="150"
+        width="150"
+        height="82"
       >
         <style>{`.a{fill:"#3de0e0"}`}</style>
         <g style={{ opacity: ".15" }}>

@@ -21,7 +21,10 @@ const Containers = (props: propsType): JSX.Element => {
   //const table=
   const t = React.Children.toArray(children);
   const arrr = t.map((Item: any, index: number) => {
-    let customPositionDisplacement = {top:`${20*(index + 1)}px`, left:`${20*(index + 1)}px`};
+    let customPositionDisplacement = {
+      top: `${10 * index}px`,
+      left: `${10 * index}px`,
+    };
     //----Returning new Element with JSX
     return (
       <Container2

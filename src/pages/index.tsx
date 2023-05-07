@@ -68,6 +68,9 @@ export default function Home() {
           <Containers test={"kfkrf"} value={"jjjfjkf"}>
             <Container2 text={""}></Container2>
             <Container2 text={""}></Container2>
+            <Container2 text={""}></Container2>
+            <Container2 text={""}></Container2>
+            <Container2 text={""}></Container2>
           </Containers>
           {/*<Container text={text}></Container>
           <Container text={text}></Container>*/}
