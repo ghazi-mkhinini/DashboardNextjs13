@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
 
 interface propsType {
-  text: string;
+  id?: string;
+  style?: any;
+  text?: string;
   customClassName?: string;
-  rest?:ReactNode[];
+  rest?: ReactNode[];
 }
 
 export default function Container2({
