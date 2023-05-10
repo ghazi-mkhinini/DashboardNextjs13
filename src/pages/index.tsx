@@ -52,7 +52,7 @@ export default function Home() {
           <Container2 text={""}></Container2>
           <Container2 text={""}></Container2>
 
-          <Container3 text={""} width={220}>
+          <Container3 className="bg-amber-800" text={""} width={220}>
             <ExtendedGuage2
               id={"guageEx"}
               percentage={percentage}
@@ -65,7 +65,7 @@ export default function Home() {
 
           <ExtendedGuage2 percentage={percentage}></ExtendedGuage2>
 
-          <Containers test={"kfkrf"} value={"jjjfjkf"}>
+          <Containers>
             <Container2 text={""}></Container2>
             <Container2 text={""}></Container2>
             <Container2 text={""}></Container2>

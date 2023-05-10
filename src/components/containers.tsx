@@ -27,23 +27,23 @@ const Containers = (props: propsType): JSX.Element => {
       left: `${10 * index}px`,
     };
     //----Returning new Element with JSX
-    /*return (
+    return (
       <Container2
         id={"container2_" + (index + 1)}
-        customClassName={"absolute"}
+        className={"absolute" + " " + (Item.props.className ?? "")}
         style={customPositionDisplacement}
       ></Container2>
-    );*/
+    );
     //----Returning new Element with React cloneElement  imperative code
-    return cloneElement(
+    /*return cloneElement(
       Item,
       {
-        customClassName: "absolute",
+        className: "absolute" + " " + (Item.props.className ?? ""),
         id: "container2_" + (index + 1),
         style: customPositionDisplacement,
       },
       null
-    );
+    );*/
   });
 
   return <div className="relative">{arrr}</div>;

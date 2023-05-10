@@ -4,17 +4,17 @@ interface propsType {
   id?: string;
   style?: any;
   text?: string;
-  customClassName?: string;
+  className?: string;
   rest?: ReactNode[];
 }
 
 export default function Container2({
   text,
-  customClassName,
+  className,
   ...rest
 }: propsType): JSX.Element {
   return (
-    <div className={"inline-block m-2" + " " + customClassName} {...rest}>
+    <div className={"inline-block m-2" + " " + className} {...rest}>
       <svg
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
