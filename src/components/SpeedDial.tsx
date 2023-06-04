@@ -1,5 +1,6 @@
 import { Dial, DialOptions } from "flowbite";
 import { useLayoutEffect, useRef } from "react";
+("useClient");
 
 const SpeedDial = () => {
   let dial: Dial;
