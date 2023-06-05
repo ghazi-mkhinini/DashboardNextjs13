@@ -40,7 +40,7 @@ const SpeedDial = () => {
     <div
       id="dialParent"
       data-dial-init
-      className="fixed bottom-6 right-24 group"
+      className="dark fixed bottom-6 right-24 group"
     >
       <div
         id="dialContent"
