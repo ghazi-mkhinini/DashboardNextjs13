@@ -17,6 +17,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import QueryRoute1 from "@/API/QueryRoute1";
 import { Dial, DialOptions } from "flowbite";
 import SpeedDial from "@/components/SpeedDial";
+import Stepper from "@/components/Stepper";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ export default function Home() {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
+    //document.documentElement.classList.add("dark");
     setInterval(() => {
       if (percentage < 100)
         setPercentage((percentage) => {
@@ -40,6 +42,7 @@ export default function Home() {
 
   return (
     <>
+      <Stepper></Stepper>
       <Factory3D></Factory3D>
       <div className="flex">
         <div>
