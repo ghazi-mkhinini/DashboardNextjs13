@@ -22,7 +22,8 @@ export default function Container2({
         width="90"
         height="130"
       >
-        <style>{`.a{fill:#3de0e0}.b{opacity:.15;fill:#3de0e0}`}</style>
+        <style>{`.a{fill:#3de0e0}.b{opacity:.15;fill:#374151 }`}</style>
+        {/*original #3de0e0 */}
         <path
           className="a"
           d="m522.5 354.6v348.9h-78.7v-7.5h71.2v-338.6l-49.5-58.3v-195l-51.2-66.9h-406.1v448.8l37.1 49.5v160.5h244.8v7.5h-252.3v-165.5l-37.2-49.5v-458.8h417.4l55 71.9v194.7z"

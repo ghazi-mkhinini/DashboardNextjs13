@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { useMenuAnimation } from "./container3_Controller";
 
 interface Props {
-  className?:string;
+  className?: string;
   children?: ReactNode;
   width: number;
   text?: string;
@@ -73,7 +73,7 @@ export default function Container3({
     <>
       <div
         id="container3"
-        className={"container3 inline-block m-2 relative"+" "+className}
+        className={"container3 inline-block m-2 relative" + " " + className}
         ref={scope2}
         style={{
           transform: "translateX(0%)",
@@ -94,7 +94,8 @@ export default function Container3({
           width={width}
           height={width * 0.6}
         >
-          <style>{`.a{fill:#3de0e0}.b{opacity:.15;fill:#3de0e0}`}</style>
+          <style>{`.a{fill:#3de0e0}.b{opacity:.15;fill:#374151}`}</style>
+          {/*original #3de0e0 */}
           <path
             className="a"
             d="m832.9 522h-338.2l-20-30.8h-202.7l-25 30.8h-223.6v-492.5h199.4v6.9h-192.6v478.8h213.6l24.9-30.8h209.7l20 30.8h331.5l70.7-77.6v-401.2h-121.4v-6.9h128.2v410.8z"

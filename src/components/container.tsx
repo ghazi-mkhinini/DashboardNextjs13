@@ -23,10 +23,10 @@ export default function Container({ text }: typeStrinhg): JSX.Element {
         width="150"
         height="82"
       >
-        <style>{`.a{fill:"#3de0e0"}`}</style>
-        <g style={{ opacity: ".15" }}>
+        <style>{`.a{fill:"#3de0e0"} .b{opacity:.15;fill:#374151 }`}</style>
+        <g>
           <path
-            className="a"
+            className="b"
             d="m892.3 43.4h176.6l41.8 39.7v426.4l-62.7 79.5h-238l-15.7-28.3h-200.6l-10.2 28.3h-457.2l-77.4-102.4v-393l46-50.2h262.8"
           />
         </g>
